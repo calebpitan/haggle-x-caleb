@@ -1,0 +1,32 @@
+version: '3.8'
+
+networks:
+  cache: # redis
+
+services:
+  web:
+    build: 
+      context: .
+      target: development
+    ports:
+      - ${PORT}:${PORT}
+      - 9229:9229
+    command: yarn test:all
+    volumes:
+      - '.:/haggle/x/caleb'
+      - '/haggle/x/caleb/node_modules'
+    networks:
+      - cache
+    depends_on:
+      - redis
+    environment:
+      - REDIS_URL=redis://hagglex_cache
+    env_file:
+      - ./.env
+  redis:
+    image: 'redis:alpine'
+    container_name: hagglex_cache
+    expose:
+      - 6379
+    networks:
+      - cache
