@@ -4,13 +4,13 @@ import { CacheService } from '../utils/caching/cache.service'
 
 jest.mock('../utils/caching/cache.service', () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const { CacheServiceMock } = require('../../__mocks__/utils/caching/cache.service')
+  const { CacheServiceMock } = require('../__mocks__/utils/caching/cache.service')
   return { CacheService: CacheServiceMock }
 })
 
 jest.mock('node-fetch', () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const fetch = require('../../__mocks__/fetch')
+  const fetch = require('../__mocks__/fetch')
   return fetch
 })
 

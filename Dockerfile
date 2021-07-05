@@ -14,7 +14,6 @@ WORKDIR /haggle/x/caleb
 COPY package.json ./
 COPY yarn.lock ./
 RUN yarn install --production --frozen-lockfile
-# COPY . .
 COPY --from=development /haggle/x/caleb/dist ./dist
 EXPOSE 3000
 CMD ["yarn", "start:prod"]
