@@ -1,6 +1,8 @@
 name: HaggleXCaleb Node CI
 
 on:
+  push:
+    branches: [development]
   pull_request:
     branches: [main]
 
@@ -22,8 +24,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       
       - name: Build Application
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
+      - run: |
+        yarn install --frozen-lockfile
+        yarn build
 
   test:
     runs-on: ubuntu-latest
@@ -44,4 +47,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
       
       - name: Test Application
-      - run: docker-compose -f docker-compose.test.yml up
+        run: docker-compose -f docker-compose.test.yml up
