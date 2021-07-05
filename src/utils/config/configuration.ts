@@ -11,7 +11,7 @@ const configFactory = () => ({
   },
 
   database: {
-    redisUri: process.env.REDIS_URL || 'redis://localhost:6379',
+    redisUri: process.env.REDISCLOUD_URL || process.env.REDIS_URL || 'redis://localhost:6379',
   },
 })
 
