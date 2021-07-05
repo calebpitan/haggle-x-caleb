@@ -78,5 +78,5 @@ When the debug server is started, you can set breakpoints in your VSCode editor 
 
 ## Deployment
 
-This app is deployed on Heroku using Github Actions as the CI/CD pipeline.
+This app is deployed on Heroku using Github Actions as the CI/CD pipeline. The deployment is automated and occurs when a pull request is merged after all tests have passed on the development branch.
 
