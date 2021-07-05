@@ -21,8 +21,6 @@ services:
       - redis
     environment:
       - REDIS_URL=redis://hagglex_cache
-    env_file:
-      - ./.env
   redis:
     image: 'redis:alpine'
     container_name: hagglex_cache
