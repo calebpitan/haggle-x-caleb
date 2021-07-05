@@ -4,7 +4,7 @@ networks:
   cache: # redis
 
 services:
-  web:
+  app-test:
     build: 
       context: .
       target: development
