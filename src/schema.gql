@@ -1,0 +1,23 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  url(url: UrlInput!): Url!
+}
+
+type Url {
+  """Description of the webpage parsed from the URL"""
+  description: String!
+
+  """HREF to the image parsed from the webpage pointed to by the URL"""
+  image: String!
+
+  """Example field (placeholder)"""
+  title: String!
+}
+
+input UrlInput {
+  """URL to parse"""
+  href: String!
+}

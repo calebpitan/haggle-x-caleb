@@ -1,0 +1,20 @@
+import { join } from 'path'
+import { Module } from '@nestjs/common'
+import { ConfigModule } from '@nestjs/config'
+import { GraphQLModule } from '@nestjs/graphql'
+import { UrlModule } from './url/url.module'
+import configuration from './utils/config/configuration'
+import { CacheModule } from './utils/caching/cache.module'
+
+@Module({
+  imports: [
+    ConfigModule.forRoot({ load: [configuration], isGlobal: true }),
+    CacheModule,
+    GraphQLModule.forRoot({
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      sortSchema: true,
+    }),
+    UrlModule,
+  ],
+})
+export class AppModule {}
