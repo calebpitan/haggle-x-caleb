@@ -1,4 +1,4 @@
-name: HaggleXCaleb Node CI
+name: HaggleXCaleb Application Deployment
 
 on:
   push:
