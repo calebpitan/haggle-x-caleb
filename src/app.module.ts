@@ -13,6 +13,9 @@ import { CacheModule } from './utils/caching/cache.module'
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
+      // Turn on introspection and playground in production
+      introspection: true,
+      playground: true,
     }),
     UrlModule,
   ],
