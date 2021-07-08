@@ -86,4 +86,4 @@ Thank you!
 
 ## Copyright & License
 
-Copyright (c) Caleb Adepitan 2021. MIT Licensed
+Copyright (c) 2021 Caleb Adepitan. MIT Licensed
